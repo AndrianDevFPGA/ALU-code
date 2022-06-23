@@ -42,10 +42,9 @@ module ALU(  input [7:0] Operand1,Operand2,
  default: Out_ALU = Operand2;
  endcase
  end
- assign O = Out_ALU[7] ^ Out_ALU[6];
- assign Z = (Out_ALU == 0)? 1'b1 : 1'b0;
- assign S = Out_ALU[7];
- assign Flags = {Z,CarryOut,S,O};
- assign Out = Out_ALU;
-// fpga4student.com: FPGA project, Verilog project, VHDL project
+  assign O = Out_ALU[7] ^ Out_ALU[6];
+  assign Z = (Out_ALU == 0)? 1'b1 : 1'b0;
+  assign S = Out_ALU[7];
+  assign Flags = {Z,CarryOut,S,O};
+  assign Out = Out_ALU;
 endmodule
